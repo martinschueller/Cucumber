@@ -32,6 +32,7 @@ a:hover, a:active {
 }
 #title img {
 	margin: 0 auto;
+	z-index: 20;
 }
 .story {
 	position: relative;
