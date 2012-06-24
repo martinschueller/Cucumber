@@ -43,19 +43,24 @@ function saveForm() {
 	}	
 	console.log( "feel = " + feel + " stuff = " + stuff + " place = " + place + " reason = " + reason + " vid = " + vid );
 
-	$.ajax( {
-		type: "POST",
-		url: "http://cucumber.iaep.de/snacks",
-		data: {
-			"hate":feel,
-			"stuff":stuff,
-			"somewhere":place,
-			"video_link":vid
-		}
-//		add snack: POST http://cucumber.iaep.de/snacks data={"hate":"0","stuff":"boats","somewhere":"in mumbai","video_link":"blaa"}
-//		get snacks: GET http://cucumber.iaep.de/snacks
+//	$.ajax( {
+//		type: "POST",
+//		url: "http://cucumber.iaep.de/snacks",
+//		data: {"data":{
+//			"hate":feel,
+//			"stuff":stuff,
+//			"somewhere":place,
+//			"video_link":vid
+//		}}
+////		add snack: POST http://cucumber.iaep.de/snacks data={"hate":"0","stuff":"boats","somewhere":"in mumbai","video_link":"blaa"}
+////		get snacks: GET http://cucumber.iaep.de/snacks
+//	
+//	})
 	
-	})
+	$.post("http://cucumber.iaep.de/snacks", "data=" + JSON.stringify({"hate":feel,"stuff":stuff,"somewhere":place,"video_link":vid, "reason":reason}),
+			   function(data) {
+			     //alert("Data Loaded: " + data);
+			   });
 
 }
 

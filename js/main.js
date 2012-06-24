@@ -7,9 +7,9 @@ window.onload = function() {
 
 		  $.each(data, function(key, val) {
 			  console.log('key: ' + key);
-			  console.log('val: ' + val);
+			  console.log('val: ' + val.data.video_link);
 			var story = new Story();
-			story.init("#stories", "http://player.vimeo.com/video/44562315", key);
+			story.init("#stories", val, key);
 		    items.push(story);
 		  });
 		  

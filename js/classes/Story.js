@@ -9,16 +9,18 @@ Story = function() {
 	var targetTag;
 	var popcornTarget;
 	var storyID;
+	var storyData;
 
 	
 	
-	var init = function (target, url, id){
+	var init = function (target, val, id){
 		targetTag= target;
 		storyID = id;
+		storyData = val;
 		
 		$(targetTag).append('<article class="story" id="' + storyID +'"><section><section id="videoWrapper' + id +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></section><section id="title"></section></section></article>');		
 		popcornTarget = "#videoWrapper" + storyID;
-		pop = Popcorn.vimeo(popcornTarget, url);
+		pop = Popcorn.vimeo(popcornTarget, storyData.data.video_link);
 		 popcorn();
 		 setHeight();
 		 
