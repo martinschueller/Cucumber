@@ -7,16 +7,22 @@ Story = function() {
 	var videoWidth;
 	var videoHeight;
 	var targetTag;
+	var popcornTarget;
+	var storyID;
 
 	
 	
-	var init = function (target, url){
+	var init = function (target, url, id){
+		targetTag= target;
+		storyID = id;
 		
-		 pop = Popcorn.vimeo(target, url);
+		$(targetTag).append('<article class="story" id="' + storyID +'"><section><section id="videoWrapper' + id +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></section><section id="title"></section></section></article>');		
+		popcornTarget = "#videoWrapper" + storyID;
+		pop = Popcorn.vimeo(popcornTarget, url);
 		 popcorn();
 		 setHeight();
-		 targetTag= target;
-		$(targetTag + ' #videoOverlay').click(function() {
+		 
+		$(popcornTarget + ' #videoOverlay').click(function() {
 				pop.play(1);
 
 			});
@@ -27,14 +33,14 @@ Story = function() {
 
 		setTimeout(function() {
 
-			videoWidth = $(targetTag + ' object').width();
-			videoHeight = $(targetTag + ' object').height();
+			videoWidth = $(popcornTarget + ' object').width();
+			videoHeight = $(popcornTarget + ' object').height();
 
 			if (videoWidth != 0) {
 
-				$('.story').width(videoWidth);
-				$(targetTag + ' #videoOverlay').width(videoWidth);
-				$(targetTag + ' #videoOverlay').height(videoHeight);
+				$('.story#' + storyID).width(videoWidth);
+				$(popcornTarget + ' #videoOverlay').width(videoWidth);
+				$(popcornTarget + ' #videoOverlay').height(videoHeight);
 				//console.log('video width: ' + videoWidth);
 
 			} else {
