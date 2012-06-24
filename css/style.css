@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 16px /1.4 Georgia, Serif;
+	color: white;
+	background: black;
+	text-align: left;
+}
+#title {
+
+	position:relative;
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
+}
+#title img {
+	margin: 0 auto;
+}
+.story {
+	position: relative;
+	/*padding-bottom: 56.25%;*/
+	text-align: center;
+}
+#videoWrapper object {
+	position: absolute;
+	/*     width: 400px;
+	 height: auto;*/
+}
+#timeline {
+
+	bottom: 0px;
+}
+
+#videoWrapper {
+	
+	position: absolute;
+	
+}
+
+#soundWrapper {
+	
+	position: absolute;
+	top: 400px;
+	
+}
