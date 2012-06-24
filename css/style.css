@@ -39,6 +39,14 @@ body {
 	
 }
 
+#videoOverlay {
+	
+	position: absolute;
+	background-color: black;
+	opacity: 0.0;
+	z-index: 10;
+	
+}
 #soundWrapper {
 	
 	position: absolute;

@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 	pop.exec( 1, function() {
 		videoWidth = $('#videoWrapper object').width();
+		videoHeight = $('#videoWrapper object').height();
 		$('.story').width(videoWidth);
+		$('#videoOverlay').width(videoWidth);
+		$('#videoOverlay').height(videoHeight);
 	});
 	pop.exec( 13, function() {
 		play();
