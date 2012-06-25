@@ -26,10 +26,19 @@ Story = function() {
 		 popcorn();
 		 setHeight();
 		 
-		$(popcornTarget + ' #videoOverlay').click(function() {
-				pop.play(1);
+//		$(popcornTarget + ' #videoOverlay').click(function() {
+//				pop.play(1);
+//
+//			});
+		 
+		 $(popcornTarget + ' #videoOverlay').hover(function() {
+				pop.play();
+
+			}, function() {
+				pop.pause();
 
 			});
+		 
 		
 	}
 	
@@ -82,10 +91,10 @@ Story = function() {
 			$(popcornTarget + ' #videoOverlay').fadeTo('slow', 0.8);
 		});
 		
-		pop.exec(29, function() {
-			pop.pause();
-			snd.pause();
-		});
+//		pop.exec(29, function() {
+//			pop.pause();
+//			snd.pause();
+//		});
 
 		// var pinkHighHeels = Popcorn.soundcloud("#soundWrapper",
 		// "http://soundcloud.com/marnschler/pinkhighheels/s-N9tSa");
