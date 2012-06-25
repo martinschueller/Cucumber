@@ -23,6 +23,8 @@ Story = function() {
 		popcornWrapper = ".story#" + storyID;
 		popcornTarget = "#videoWrapper" + storyID;
 		pop = Popcorn.smart(popcornTarget, storyData.data.video_link);
+		// hide our controls
+		pop.controls( false );
 		 popcorn();
 		 setHeight();
 		 
