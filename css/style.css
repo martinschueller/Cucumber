@@ -135,9 +135,6 @@ a:hover, a:active {
   float: left;
   overflow: hidden;
   position: relative;
-  -webkit-border-top-right-radius: 1.2em;
-      -moz-border-radius-topright: 1.2em;
-          border-top-right-radius: 1.2em;
 }
 
 .story * {
