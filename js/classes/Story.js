@@ -8,6 +8,7 @@ Story = function() {
 	var videoHeight;
 	var targetTag;
 	var popcornTarget;
+	var popcornWrapper;
 	var storyID;
 	var storyData;
 
@@ -18,7 +19,8 @@ Story = function() {
 		storyID = id;
 		storyData = val;
 		
-		$(targetTag).append('<div class="story" id="' + storyID +'"><section><section id="videoWrapper' + id +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></section><section id="title"></section></section></div>');		
+		$(targetTag).append('<div class="story" id="' + storyID +'"><section><section class="videoWrapper" id="videoWrapper' + storyID +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></section><section class="storytitle" id="title' + storyID +'"></section></section></div>');		
+		popcornWrapper = ".story#" + storyID;
 		popcornTarget = "#videoWrapper" + storyID;
 		pop = Popcorn.vimeo(popcornTarget, storyData.data.video_link);
 		 popcorn();
@@ -39,8 +41,9 @@ Story = function() {
 			videoHeight = $(popcornTarget + ' object').height();
 
 			if (videoWidth != 0) {
-
-				$('.story#' + storyID).width(videoWidth);
+				$(popcornWrapper).width(videoWidth);
+				$(popcornWrapper).height(videoHeight);
+				$(popcornTarget).width(videoWidth);
 				$(popcornTarget + ' #videoOverlay').width(videoWidth);
 				$(popcornTarget + ' #videoOverlay').height(videoHeight);
 				//console.log('video width: ' + videoWidth);
@@ -57,16 +60,16 @@ Story = function() {
 		pop.controls(false);
 		pop.timeline({
 			start : 25,
-			target : "title",
-			title : "I ",
-			text : storyData.data.stuff,
-			innerHTML : "hallo hallo",
+			target : "title" + storyID,
+			title: "",
+			text: "",
+			innerHTML : "I love</br>" + storyData.data.stuff + "</br>because</br>" + storyData.data.reason,
 			direction : "up"
 		});
 		pop.exec(1, function() {
 
 		});
-		pop.exec(13, function() {
+		pop.exec(9, function() {
 			playSound();
 
 		});
@@ -74,6 +77,11 @@ Story = function() {
 			pop.mute();
 
 		});
+		
+		pop.exec(25, function() {
+			$(popcornTarget + ' #videoOverlay').fadeTo('slow', 0.8);
+		});
+		
 		pop.exec(29, function() {
 			pop.pause();
 			snd.pause();
@@ -98,10 +106,10 @@ Story = function() {
 			console.log('sound gets loaded');
 			if (snd.canPlayType('audio/ogg')) {
 				snd = new Audio(
-						'http://www.position-relative.net/creation/audiotag/Mogwai2009-04-29_acidjack_t16.ogg');
+						'http://www.piano-midi.de/ogg/beethoven/beethoven_opus10_3.ogg');
 			} else if (snd.canPlayType('audio/mp3')) {
 				snd = new Audio(
-						'http://www.position-relative.net/creation/audiotag/Mogwai2009-04-29_acidjack_t16.mp3');
+						'http://www.piano-midi.de/mp3_link.php?id=443c105320e4ccccbcde628680f356af&file=beethoven_opus10_3.mp3');
 			}
 
 			snd.play();

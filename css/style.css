@@ -23,23 +23,23 @@ a:hover, a:active {
   text-decoration: underline;
 }
 
-#title {
-
+.storytitle {
+	text-align: center;
 	position:relative;
 	margin-left: auto;
 	margin-right: auto;
 	display:block;
+	z-index: 25;
+/*	width: 300px;
+	height: 300px;*/
 }
-#title img {
+.storytitle img {
 	margin: 0 auto;
 	z-index: 20;
 }
-.story {
-/*	position: relative;
-	padding-bottom: 56.25%;
-	text-align: center;*/
-}
-#videoWrapper object {
+
+
+.videoWrapper object {
 	position: absolute;
 	/*     width: 400px;
 	 height: auto;*/
@@ -49,7 +49,7 @@ a:hover, a:active {
 	bottom: 0px;
 }
 
-#videoWrapper {
+.videoWrapper {
 	
 	position: absolute;
 	
@@ -63,13 +63,12 @@ a:hover, a:active {
 	z-index: 10;
 	
 }
-#soundWrapper {
+/*#soundWrapper {
 	
 	position: absolute;
 	top: 400px;
 	
-}
-
+}*/
 
 #ruledrawer {
   margin: 0;
@@ -130,15 +129,15 @@ a:hover, a:active {
 /**** Isotope styles ****/
 
 .story {
-  width: 560px;
-  height: 315px;
+/*  width: 560px;
+  height: 315px;*/
   float: left;
   overflow: hidden;
   position: relative;
 }
 
-.story * {
+/*.story * {
   position: absolute;
   margin: 0;
-}
+}*/
 
