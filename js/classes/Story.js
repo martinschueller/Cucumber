@@ -22,7 +22,7 @@ Story = function() {
 		$(targetTag).append('<div class="story" id="' + storyID +'"><section><section class="videoWrapper" id="videoWrapper' + storyID +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></section><section class="storytitle" id="title' + storyID +'"></section></section></div>');		
 		popcornWrapper = ".story#" + storyID;
 		popcornTarget = "#videoWrapper" + storyID;
-		pop = Popcorn.vimeo(popcornTarget, storyData.data.video_link);
+		pop = Popcorn.smart(popcornTarget, storyData.data.video_link);
 		 popcorn();
 		 setHeight();
 		 
