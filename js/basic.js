@@ -27,6 +27,10 @@ function saveForm() {
 	
 	var feel = 0;
 	
+	if( ifeel == "" || stuff == "" || place == "" || reason == "" || vid == "" ) {
+		return false;
+	}
+	
 	if( ifeel.match(/^h/) ) {
 		feel = 0;
 	}
@@ -37,10 +41,17 @@ function saveForm() {
 	if( vid.match(/^http:\/\/player.vimeo.com\/video\/([0-9]+)/) || vid.match(/^http:\/\/www.youtube.com/) ) {
 		console.log( "vid is go!" );
 	}
-	else {
+	else if( vid.match( /vimeo/ ) ) {
 		console.log( "boo! vid format fail!" );
 		vid = vid.replace( /^(https|http):\/\/vimeo.com/g, 'http://player.vimeo.com/video' );
+				
 	}	
+	else {
+		console.log( "error...no video!" );
+		return false;
+	}
+
+
 	console.log( "feel = " + feel + " stuff = " + stuff + " place = " + place + " reason = " + reason + " vid = " + vid );
 
 //	$.ajax( {
@@ -60,8 +71,7 @@ function saveForm() {
 	$.post("http://cucumber.iaep.de/snacks", "data=" + JSON.stringify({"hate":feel,"stuff":stuff,"somewhere":place,"video_link":vid, "reason":reason}),
 			   function(data) {
 			     //alert("Data Loaded: " + data);
-			   });
-
+			   });	
 }
 
 
