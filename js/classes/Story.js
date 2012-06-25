@@ -58,8 +58,8 @@ Story = function() {
 		pop.timeline({
 			start : 25,
 			target : "title",
-			title : "This is a title",
-			text : "this is some interesting text that goes inside",
+			title : "I ",
+			text : storyData.data.stuff,
 			innerHTML : "hallo hallo",
 			direction : "up"
 		});

@@ -35,9 +35,9 @@ a:hover, a:active {
 	z-index: 20;
 }
 .story {
-	position: relative;
-	/*padding-bottom: 56.25%;*/
-	text-align: center;
+/*	position: relative;
+	padding-bottom: 56.25%;
+	text-align: center;*/
 }
 #videoWrapper object {
 	position: absolute;
