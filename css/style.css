@@ -70,6 +70,10 @@ a:hover, a:active {
 	
 }
 
+#startspace {
+	position: absolute;
+	left: 70px;
+}
 
 #ruledrawer {
   margin: 0;
