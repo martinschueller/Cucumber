@@ -16,11 +16,14 @@ window.onload = function() {
 		  
 		});
 	
-//	$('#stories').isotope({
-//		  // options
-//		  itemSelector : '.story',
-//		  layoutMode : 'fitRows'
-//		});
+	$('#stories').isotope({
+		  // options
+		  itemSelector : '.story',
+		  layoutMode : 'fitRows'
+//		  masonry: {
+//		    columnWidth: 2000
+//		  }
+		});
 
 
 	
