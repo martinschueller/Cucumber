@@ -34,6 +34,12 @@ h2 {
   font-weight: 200;
 }
 
+#startspace
+{
+	
+	margin-top: 80px;
+}
+
 .storytitle {
 	text-align: left;
 	font-size: 40px;
@@ -204,7 +210,7 @@ h2 {
   height: 315px;*/
  border-top-style: solid;
  border-top-color: grey;
- border-top-width: 15px;
+ border-top-width: 10px;
   float: left;
   overflow: hidden;
   position: relative;
