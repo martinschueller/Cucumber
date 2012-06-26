@@ -32,9 +32,11 @@ Story = function() {
 		 
 		$(popcornTarget + ' #videoOverlay').hover(function() {
 				pop.play();
+				$(popcornTarget + ' #videoOverlay').css( "opacity", "0.0" );
 
 			},function() {
 				pop.pause();
+				$(popcornTarget + ' #videoOverlay').css( "opacity", "0.7" );
 
 			} );
 		
