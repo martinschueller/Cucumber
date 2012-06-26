@@ -11,6 +11,10 @@ Story = function() {
 	var popcornWrapper;
 	var storyID;
 	var storyData;
+	
+	var browserWidth = parseInt( document.body.offsetWidth )-50;
+	var videoColumns = 4;
+	var videoRatio;
 
 	
 	
@@ -23,25 +27,23 @@ Story = function() {
 		popcornWrapper = ".story#" + storyID;
 		popcornTarget = "#videoWrapper" + storyID;
 		pop = Popcorn.smart(popcornTarget, storyData.data.video_link);
-		// hide our controls
-		pop.controls( false );
 		 popcorn();
 		 setHeight();
 		 
-//		$(popcornTarget + ' #videoOverlay').click(function() {
-//				pop.play(1);
-//
-//			});
-		 
-		 $(popcornTarget + ' #videoOverlay').hover(function() {
+		$(popcornTarget + ' #videoOverlay').hover(function() {
 				pop.play();
 
-			}, function() {
+			},function() {
 				pop.pause();
 
-			});
-		 
+			} );
 		
+		if( storyData.data.hate == 0 ) {
+			document.getElementById( storyID ).style.borderTopColor = '#ED1E79';
+		}
+		else if( storyData.data.hate == 1 ) {
+			document.getElementById( storyID ).style.borderTopColor = '#ffff00';
+		}
 	}
 	
 	var setHeight = function() {
@@ -52,12 +54,29 @@ Story = function() {
 			videoHeight = $(popcornTarget + ' object').height();
 
 			if (videoWidth != 0) {
+				
+				
+			//console.log( "original: videoWidth = " + videoWidth + " videoHeight = " + videoHeight );
+			
+			videoRatio = parseInt( videoHeight ) / parseInt( videoWidth );		
+			
+
+			
+			videoWidth = browserWidth/videoColumns;
+			videoHeight = videoRatio * videoWidth;
+			
+			//console.log( "videoWidth = " + videoWidth + " videoHeight = " + videoHeight + " browserWidth = " + browserWidth + " videoRatio = " + videoRatio);
+
+
 				$(popcornWrapper).width(videoWidth);
 				$(popcornWrapper).height(videoHeight);
 				$(popcornTarget).width(videoWidth);
 				$(popcornTarget + ' #videoOverlay').width(videoWidth);
 				$(popcornTarget + ' #videoOverlay').height(videoHeight);
 				//console.log('video width: ' + videoWidth);
+				
+				$(popcornTarget + ' object' ).width( videoWidth );
+				$(popcornTarget + ' object' ).height( videoHeight );
 
 			} else {
 				//console.log('Video wrapper not loaded yet');
@@ -93,10 +112,10 @@ Story = function() {
 			$(popcornTarget + ' #videoOverlay').fadeTo('slow', 0.8);
 		});
 		
-//		pop.exec(29, function() {
-//			pop.pause();
-//			snd.pause();
-//		});
+		pop.exec(29, function() {
+			pop.pause();
+			snd.pause();
+		});
 
 		// var pinkHighHeels = Popcorn.soundcloud("#soundWrapper",
 		// "http://soundcloud.com/marnschler/pinkhighheels/s-N9tSa");
@@ -133,4 +152,6 @@ Story = function() {
 
 	};
 
+
 }
+

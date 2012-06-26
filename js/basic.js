@@ -1,21 +1,31 @@
 $(document).ready(function() {
-	
-	document.getElementById( "ruledrawer" ).style.height = window.innerHeight + "px";
-	document.getElementById( "ruledrawerout" ).style.height = window.innerHeight + "px";	
-
+			
 });
 
 
 function openDrawer() {
 	document.getElementById( "ruledrawer" ).style.visibility = "visible";
-    document.getElementById( "ruledrawerout" ).style.visibility = "hidden";    
 }
 
 function shutDrawer() {
 	document.getElementById( "ruledrawer" ).style.visibility = "hidden";
-    document.getElementById( "ruledrawerout" ).style.visibility = "visible";    
 }
 
+function feelChange() {
+	document.getElementById( 'formFeel' ).style.color = "#fff";
+	var tmp = document.getElementById( 'formFeel' ).value;
+	if( tmp == "hate" ) {
+		document.getElementById( 'formFeel' ).value = "love";	
+		document.getElementById( 'formspace' ).style.borderTopColor = '#ED1E79';
+	}
+	else if( tmp == "love" ) {
+		document.getElementById( 'formFeel' ).value = "hate";	
+		document.getElementById( 'formspace' ).style.borderTopColor = '#ffff00';
+	}
+	$('#formFeel').wiggle('start', {limit: 4});
+	
+	console.log( "i feel..." + document.getElementById( 'formFeel' ).value );
+}
 
 function saveForm() {
 	
@@ -31,10 +41,10 @@ function saveForm() {
 		return false;
 	}
 	
-	if( ifeel.match(/^h/) ) {
+	if( ifeel == "hate" ) {
 		feel = 0;
 	}
-	else if( ifeel.match(/^l/) ) {
+	else if( ifeel == "love" ) {
 		feel = 1;
 	}
 	

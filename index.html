@@ -29,6 +29,11 @@
   </head>
 
   <body>
+  
+  	<div id="navbar">
+  		<h1><a href="javascript:openDrawer()">TELL YOUR STORY</a></h1>
+  		<h2>use the cucumber recipe to share your mozart moment.</h2>
+  	</div>
 
     <div id="startspace">
 	  <br><br>
@@ -38,11 +43,14 @@
       <br><br>
     </div>
 
-    <div id="ruledrawer" style="visibility:hidden">
+    <div id="ruledrawer" style="visibility:hidden;">
 		<div id="formspace">
-			<input name="formFeel" id="formFeel" placeholder="love/hate" required /> <input name="formStuff" id="formStuff" placeholder="stuff" required /> in <input name="formPlace" id="formPlace" placeholder="somewhere" required /> because <input name="formReason" id="formReason" placeholder="of something" required />.
+			
+			i <input name="formFeel" class="mainform" id="formFeel" placeholder="LOVE/HATE" value="love" readonly="readonly" onclick="feelChange()" required /><br /><input name="formStuff" class="mainform" id="formStuff" placeholder="SOMETHING" required /><br /><input name="formPlace" class="mainform" id="formPlace" placeholder="SOMEWHERE"  required /> because <input name="formReason" class="mainform" id="formReason" placeholder="OF SOMETHING" required />
 			<br />
-			here is my 30s video:<br /><input name="formVid" id="formVid" placeholder="url" required />
+			<input name="formVid" id="formVid" placeholder="30s video url" required />
+			<br />
+
 		</div>
 		<div id="submitspace">
 			<strong><a href="javascript:saveForm()" onclick="shutDrawer()">GO >></a></strong>
@@ -50,8 +58,8 @@
 		</div>
     </div>
 
-    <div id="ruledrawerout" onmouseover="openDrawer()">
-    </div>
+<!--    <div id="ruledrawerout" onmouseover="openDrawer()">
+    </div> -->
 
      <!-- /container -->
 
@@ -64,6 +72,7 @@
     <script src="js/libs/jquery.isotope.min.js"></script>
     <script src="js/classes/Story.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/libs/jquery.wiggle.js"></script>
 
   </body>
 </html>
