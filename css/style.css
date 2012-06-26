@@ -61,8 +61,8 @@ h2 {
 
 .videoWrapper object{
 	position: absolute;
-/*	     width: 100%;
-	 height: 100%;*/
+  width: 347px;
+  margin-top: -50px;
 }
 #timeline {
 
@@ -194,7 +194,7 @@ input:focus {
 	/*	text-align:center;*/
 }
 #formFeel {
-//	width: 190px;
+/*	width: 190px;*/
 	width: 479px;
 	color: #171717;
 }
@@ -228,6 +228,8 @@ input:focus {
   overflow: hidden;
   position: relative;
   margin: 3px;
+  width: 347px;
+  height: 180px;
 }
 
 /*.story * {

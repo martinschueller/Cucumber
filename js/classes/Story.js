@@ -50,41 +50,41 @@ Story = function() {
 	
 	var setHeight = function() {
 
-		setTimeout(function() {
-
-			videoWidth = $(popcornTarget + ' object').width();
-			videoHeight = $(popcornTarget + ' object').height();
-
-			if (videoWidth != 0) {
-				
-				
-			//console.log( "original: videoWidth = " + videoWidth + " videoHeight = " + videoHeight );
-			
-			videoRatio = parseInt( videoHeight ) / parseInt( videoWidth );		
-			
-
-			
-			videoWidth = browserWidth/videoColumns;
-			videoHeight = videoRatio * videoWidth;
-			
-			//console.log( "videoWidth = " + videoWidth + " videoHeight = " + videoHeight + " browserWidth = " + browserWidth + " videoRatio = " + videoRatio);
-
-
-				$(popcornWrapper).width(videoWidth);
-				$(popcornWrapper).height(videoHeight);
-				$(popcornTarget).width(videoWidth);
-				$(popcornTarget + ' #videoOverlay').width(videoWidth);
-				$(popcornTarget + ' #videoOverlay').height(videoHeight);
-				//console.log('video width: ' + videoWidth);
-				
-				$(popcornTarget + ' object' ).width( videoWidth );
-				$(popcornTarget + ' object' ).height( videoHeight );
-
-			} else {
-				//console.log('Video wrapper not loaded yet');
-				setHeight();
-			}
-		}, 300);
+//		setTimeout(function() {
+//
+//			videoWidth = $(popcornTarget + ' object').width();
+//			videoHeight = $(popcornTarget + ' object').height();
+//
+//			if (videoWidth != 0) {
+//				
+//				
+//			//console.log( "original: videoWidth = " + videoWidth + " videoHeight = " + videoHeight );
+//			
+//			videoRatio = parseInt( videoHeight ) / parseInt( videoWidth );		
+//			
+//
+//			
+//			videoWidth = browserWidth/videoColumns;
+//			videoHeight = videoRatio * videoWidth;
+//			
+//			//console.log( "videoWidth = " + videoWidth + " videoHeight = " + videoHeight + " browserWidth = " + browserWidth + " videoRatio = " + videoRatio);
+//
+//
+//				$(popcornWrapper).width(videoWidth);
+//				$(popcornWrapper).height(videoHeight);
+//				$(popcornTarget).width(videoWidth);
+//				$(popcornTarget + ' #videoOverlay').width(videoWidth);
+//				$(popcornTarget + ' #videoOverlay').height(videoHeight);
+//				//console.log('video width: ' + videoWidth);
+//				
+//				$(popcornTarget + ' object' ).width( videoWidth );
+//				$(popcornTarget + ' object' ).height( videoHeight );
+//
+//			} else {
+//				//console.log('Video wrapper not loaded yet');
+//				setHeight();
+//			}
+//		}, 300);
 	}
 	
 	var popcorn = function(){
