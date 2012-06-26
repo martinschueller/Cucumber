@@ -31,8 +31,8 @@
   <body>
   
   	<div id="navbar">
-  		<h1>TELL YOUR STORY</h1>
-  		<h2><a href="javascript:openDrawer()">use the cucumber recipe to share your mozart moment.</a></h2>
+  		<h1>I LOVE/HATE STUFF...</h1>
+  		<h2><a href="javascript:openDrawer()">use the cucumber recipe to tell your story >></a></h2>
   	</div>
 
     <div id="startspace">
@@ -40,18 +40,24 @@
 	</div>
     </div>
 
-    <div id="ruledrawer" style="visibility:hidden;">
+    <div id="ruledrawer">
 		<div id="formspace">
 			
-			i <input name="formFeel" class="mainform" id="formFeel" placeholder="LOVE/HATE" value="love" readonly="readonly" onclick="feelChange()" required /><br /><input name="formStuff" class="mainform" id="formStuff" placeholder="SOMETHING" required /><br /><input name="formPlace" class="mainform" id="formPlace" placeholder="SOMEWHERE"  required /> because <input name="formReason" class="mainform" id="formReason" placeholder="OF SOMETHING" required />
+			i <input name="formFeel" class="mainform" id="formFeel" placeholder="LOVE/HATE" readonly="readonly" onclick="feelChange()" required />
+			<br />
+			<input name="formStuff" class="mainform" id="formStuff" placeholder="SOMETHING" required />
+			<br />
+			<input name="formPlace" class="mainform" id="formPlace" placeholder="SOMEWHERE"  required /> 
+			because
+			<input name="formReason" class="mainform" id="formReason" placeholder="OF SOMETHING" required />
 			<br />
 			<input name="formVid" id="formVid" placeholder="30s video url" required />
 			<br />
 
 		</div>
 		<div id="submitspace">
-			<strong><a href="javascript:saveForm()" onclick="shutDrawer()">GO >></a></strong>
-			<p style="font-size:30px; line-height:50px;"><strong><a href="javascript:shutDrawer()">…forget it</a></strong></p>
+			<a href="javascript:saveForm()" onclick="shutDrawer()" style="visibility:hidden" id="previewBtn">preview</a>
+			<a href="javascript:shutDrawer()">explore</a>
 		</div>
     </div>
 

@@ -36,7 +36,6 @@ h2 {
 
 #startspace
 {
-	
 	margin-top: 80px;
 }
 
@@ -109,9 +108,9 @@ h2 {
   top:0px;
   left:0px;
   height: 100%;
+  width: 100%;
   margin: 0;
   background-color: rgba(0,0,0,1);
-  width: auto;
   padding: 20px 20px 20px 20px;
   z-index: 42;
 }
@@ -129,13 +128,14 @@ h2 {
 	
 	border-top-style: solid;
 	border-top-width: 30px;
-	border-top-color: #ED1E79;
+	border-top-color: #fff;
   font-size: 70px;
   line-height: 76px;
-  width:35%;
+  width:490px;
+  padding-top: 25px;
   	margin-left: auto;
   	margin-right: auto;
-  	margin-top: 120px;
+  	margin-top: 50px;
   font-weight: 200;
   text-transform: uppercase;
 }
@@ -143,42 +143,59 @@ h2 {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 75px;
-  text-align: right;	
+  text-align: center;
+  font-weight: bold;
 }
 #submitspace a {
-	padding: 3px;
+  padding: 18px 18px 18px 18px;
   background-color: grey;
+  text-decoration: none;	
 
 }
 
 ::-webkit-input-placeholder {
     color:    #171717;
+	font-style: italic;
+	font-weight: 200;
 }
 #formFeel:-moz-placeholder {
     color:    #171717;
+	font-style: italic;
+	font-weight: 200;
 }
 #formPlace:-moz-placeholder {
     color:    #171717;
+    font-style: italic;
+	font-weight: 200;
 }
 #formStuff:-moz-placeholder {
     color:    #171717;
+    font-style: italic;
+	font-weight: 200;
 }
 #formReason:-moz-placeholder {
     color:    #171717;
+    font-style: italic;
+	font-weight: 200;
+}
+
+input:focus {
+	background-color: rgba(255,255,255,0.3);
 }
 
 .mainform {
-	background-color: rgba(255,255,255,0.3);
+	background-color: rgba(255,255,255,0.2);
 	border: none;
 	height: 70px; padding: 0 0 0 0; margin: 0 0 0 0;
 	/*-moz-box-shadow: 0px 1px 0px #f2f2f2;-webkit-box-shadow: 0px 1px 0px #f2f2f2;	*/
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 70px; text-transform: uppercase; font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 70px; text-transform: uppercase; font-weight: bold; 
 	/*	text-align:center;*/
 }
 #formFeel {
-	width: 190px;
+//	width: 190px;
+	width: 454px;
 	color: #171717;
 }
 #formPlace, #formStuff, #formReason {

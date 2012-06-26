@@ -1,5 +1,50 @@
+var ifeel;
+var stuff;
+var place;
+var reason;
+var vid;
+
+
 $(document).ready(function() {
-			
+	$('input').focus( function() {
+		console.log( "checkForm() called" );
+	
+		ifeel = document.getElementById( 'formFeel' ).value;
+		stuff = document.getElementById( 'formStuff' ).value;
+		place = document.getElementById( 'formPlace' ).value;
+		reason = document.getElementById( 'formReason' ).value;
+		vid = document.getElementById( 'formVid' ).value;	
+		
+		console.log( "ifeel = " + ifeel + " stuff = " + stuff + " place = " + place + " reason = " + reason + " vid = " + vid );		
+		
+		var i = 0;
+		if( ifeel != "" ) {
+			i++;
+			document.getElementById( 'formFeel' ).style.backgroundColor = "rgba(0,0,0,1)";
+		}
+		if( stuff != "" ) {
+			i++;
+			document.getElementById( 'formStuff' ).style.backgroundColor = "rgba(0,0,0,1)";
+		}
+		if( place != "" ) {
+			i++;
+			document.getElementById( 'formPlace' ).style.backgroundColor = "rgba(0,0,0,1)";
+		}
+		if( reason != "" ) {
+			i++;
+			document.getElementById( 'formReason' ).style.backgroundColor = "rgba(0,0,0,1)";
+		}
+		if( vid != "" ) {
+			i++;
+			document.getElementById( 'formVid' ).style.backgroundColor = "rgba(0,0,0,1)";
+		}
+		
+		if( i < 4 ) {
+			return false;
+		}
+		
+		document.getElementById( 'previewBtn' ).style.visibility = "visible";
+	} );		
 });
 
 
@@ -12,9 +57,10 @@ function shutDrawer() {
 }
 
 function feelChange() {
+	document.getElementById( 'formFeel' ).style.width = "190px";
 	document.getElementById( 'formFeel' ).style.color = "#fff";
 	var tmp = document.getElementById( 'formFeel' ).value;
-	if( tmp == "hate" ) {
+	if( tmp == "hate" || tmp == "") {
 		document.getElementById( 'formFeel' ).value = "love";	
 		document.getElementById( 'formspace' ).style.borderTopColor = '#ED1E79';
 	}
@@ -29,17 +75,7 @@ function feelChange() {
 
 function saveForm() {
 	
-	var ifeel = document.getElementById( 'formFeel' ).value;
-	var stuff = document.getElementById( 'formStuff' ).value;
-	var place = document.getElementById( 'formPlace' ).value;
-	var reason = document.getElementById( 'formReason' ).value;
-	var vid = document.getElementById( 'formVid' ).value;
-	
 	var feel = 0;
-	
-	if( ifeel == "" || stuff == "" || place == "" || reason == "" || vid == "" ) {
-		return false;
-	}
 	
 	if( ifeel == "hate" ) {
 		feel = 0;
