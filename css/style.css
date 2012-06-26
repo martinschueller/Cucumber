@@ -11,7 +11,7 @@ body {
 
 a {
   color: #333333;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:focus {
   outline: thin dotted #333;
@@ -153,23 +153,23 @@ h2 {
 }
 
 ::-webkit-input-placeholder {
-    color:    #333;
+    color:    #171717;
 }
 #formFeel:-moz-placeholder {
-    color:    #333;
+    color:    #171717;
 }
 #formPlace:-moz-placeholder {
-    color:    #333;
+    color:    #171717;
 }
 #formStuff:-moz-placeholder {
-    color:    #333;
+    color:    #171717;
 }
 #formReason:-moz-placeholder {
-    color:    #333;
+    color:    #171717;
 }
 
 .mainform {
-	background-color: rgba(255,255,255,0);
+	background-color: rgba(255,255,255,0.2);
 	border: none;
 	height: 70px; padding: 0 0 0 0; margin: 0 0 0 0;
 	/*-moz-box-shadow: 0px 1px 0px #f2f2f2;-webkit-box-shadow: 0px 1px 0px #f2f2f2;	*/
@@ -177,24 +177,16 @@ h2 {
 	/*	text-align:center;*/
 }
 #formFeel {
-	width: 210px;
-	color: #333;
+	width: 190px;
+	color: #171717;
 }
-#formPlace {
-	width: 480px;
-	color: #fff; 
-}
-#formStuff {
-	width: 100%;
-	color: #fff; 
-}
-#formReason {
+#formPlace, #formStuff, #formReason {
 	width: 100%;
 	color: #fff; 
 }
 
 #formVid {
-	background-color:rgba(255,255,255,0);
+	background-color:rgba(255,255,255,0.2);
 	border: none;
 	height: 50px; 
 	width: 100%;
