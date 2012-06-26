@@ -130,8 +130,8 @@ h2 {
 	border-top-width: 30px;
 	border-top-color: #fff;
   font-size: 70px;
-  line-height: 76px;
-  width:490px;
+  line-height: 65px;
+  width:515px;
   padding-top: 25px;
   	margin-left: auto;
   	margin-right: auto;
@@ -195,7 +195,7 @@ input:focus {
 }
 #formFeel {
 //	width: 190px;
-	width: 454px;
+	width: 479px;
 	color: #171717;
 }
 #formPlace, #formStuff, #formReason {

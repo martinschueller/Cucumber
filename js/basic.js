@@ -45,6 +45,24 @@ $(document).ready(function() {
 		
 		document.getElementById( 'previewBtn' ).style.visibility = "visible";
 	} );		
+	
+	$('input').blur( function() {
+		if( ifeel != "" ) {
+			document.getElementById( 'formFeel' ).style.backgroundColor = "rgba(255,255,255,0.2)";
+		}
+		if( stuff != "" ) {
+			document.getElementById( 'formStuff' ).style.backgroundColor = "rgba(255,255,255,0.2)";
+		}
+		if( place != "" ) {
+			document.getElementById( 'formPlace' ).style.backgroundColor = "rgba(255,255,255,0.2)";
+		}
+		if( reason != "" ) {
+			document.getElementById( 'formReason' ).style.backgroundColor = "rgba(255,255,255,0.2)";
+		}
+		if( vid != "" ) {
+			document.getElementById( 'formVid' ).style.backgroundColor = "rgba(255,255,255,0.2)";
+		}
+	});
 });
 
 
