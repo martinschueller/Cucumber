@@ -42,7 +42,7 @@ h2 {
 
 .storytitle {
 	text-align: left;
-	font-size: 40px;
+	font-size: 30px;
 	text-transform: uppercase;
 	font-weight: bold;
 	position:relative;
@@ -138,7 +138,10 @@ h2 {
   font-weight: 200;
   text-transform: uppercase;
 }
-#submitspace {	
+#submitspace {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
   font-size: 18px;
   line-height: 75px;
   text-align: right;	
@@ -210,7 +213,7 @@ h2 {
   height: 315px;*/
  border-top-style: solid;
  border-top-color: grey;
- border-top-width: 10px;
+ border-top-width: 8px;
   float: left;
   overflow: hidden;
   position: relative;
