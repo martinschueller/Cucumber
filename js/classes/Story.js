@@ -15,7 +15,7 @@ Story = function() {
 	var browserWidth = parseInt( document.body.offsetWidth )-50;
 	var videoColumns = 4;
 	var videoRatio;
-
+	var playing = false;
 	
 	
 	var init = function (target, val, id){
@@ -23,7 +23,7 @@ Story = function() {
 		storyID = id;
 		storyData = val;
 		
-		$(targetTag).append('<div class="story" id="' + storyID +'"><section><section class="videoWrapper" id="videoWrapper' + storyID +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></section><section class="storytitle" id="title' + storyID +'"></section></section></div>');		
+		$(targetTag).append('<div class="story" id="' + storyID +'"><div class="videoWrapper" id="videoWrapper' + storyID +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></div><section class="storytitle" id="title' + storyID +'"></section></div>');		
 		popcornWrapper = ".story#" + storyID;
 		popcornTarget = "#videoWrapper" + storyID;
 		pop = Popcorn.smart(popcornTarget, storyData.data.video_link);
@@ -31,14 +31,34 @@ Story = function() {
 		 setHeight();
 		 
 		$(popcornTarget + ' #videoOverlay').hover(function() {
-				pop.play();
+				//pop.play();
 				$(popcornTarget + ' #videoOverlay').css( "opacity", "0.0" );
 
 			},function() {
-				pop.pause();
-				$(popcornTarget + ' #videoOverlay').css( "opacity", "0.7" );
+				//pop.pause();
+				if(!playing){
+					$(popcornTarget + ' #videoOverlay').css( "opacity", "0.7" );
+				}
+				
 
 			} );
+		$(popcornTarget + ' #videoOverlay').click(function() {
+			if(!playing){
+			pop.play();
+			playing = true;
+			}
+			else
+				{
+				pop.pause();
+				playing = false;
+				
+				}
+			
+			//$(popcornTarget + ' #videoOverlay').css( "opacity", "0.0" );
+
+		});
+		
+		
 		
 		if( storyData.data.hate == 0 ) {
 			document.getElementById( storyID ).style.borderTopColor = '#ED1E79';
