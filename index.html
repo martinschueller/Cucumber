@@ -14,10 +14,20 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
+<<<<<<< HEAD
+=======
+		<!-- Le fav and touch icons -->
+		<link rel="shortcut icon" href="./assets/ico/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 	</head>
 
 	<body>
 
+<<<<<<< HEAD
 		<div class="single" id="navbar" style="display: none;">
 			<div id="nav3">
 				<a href="javascript:popcornExplode()"><img src="./img/popcorn.png" class="imgHoverable" border="0"></a>
@@ -81,6 +91,37 @@
 				
 			</div>
 		</div>
+=======
+		<div class="single" id="navbar">
+			<h2><a href="javascript:openDrawer()">+</a> <a href="javascript:layoutChange()">s</a></h2>
+		</div>
+
+		<div id="startspace">
+			<div class="single"  id="stories"></div>
+		</div>
+
+		<div id="ruledrawer" style="visibility:hidden">
+			<div id="formspace">
+
+				i
+				<input name="formFeel" class="mainform" id="formFeel" placeholder="LOVE/HATE" readonly="readonly" onclick="feelChange()" required />
+				<br />
+				<input name="formStuff" class="mainform" id="formStuff" placeholder="SOMETHING" required />
+				<br />
+				<input name="formPlace" class="mainform" id="formPlace" placeholder="SOMEWHERE"  required />
+				because
+				<input name="formReason" class="mainform" id="formReason" placeholder="OF SOMETHING" required />
+				<br />
+				<input name="formVid" id="formVid" placeholder="30s video url" required />
+				<br />
+
+			</div>
+			<div id="submitspace">
+				<a href="javascript:saveForm()" onclick="shutDrawer()" style="visibility:hidden" id="previewBtn">preview</a>
+				<a href="javascript:shutDrawer()">explore</a>
+			</div>
+		</div>
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 
 		<!--    <div id="ruledrawerout" onmouseover="openDrawer()">
 		</div> -->
@@ -92,7 +133,11 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+<<<<<<< HEAD
 		<script src="js/form.js"></script>
+=======
+		<script src="js/basic.js"></script>
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 		<script src="js/libs/jquery.isotope.min.js"></script>
 		<script src="js/classes/Story.js"></script>
 		<script src="js/main.js"></script>

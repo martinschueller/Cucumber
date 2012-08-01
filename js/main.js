@@ -1,5 +1,6 @@
 var numberOfStories;
 var view = "";
+<<<<<<< HEAD
 var gridRowHeight;// = 230;
 var gridColumnWidth;// = 370;
 var gridColumns = 4;
@@ -73,6 +74,11 @@ $(document).ready(function() {
 	
 });
 
+=======
+var gridRowHeight = 230;
+var gridColumnWidth = 370;
+
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 document.addEventListener("DOMContentLoaded", function(){
 	
 	$.getJSON('http://cucumber.iaep.de/snacks', function(data) {
@@ -89,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			storyArray[key] = val;
 			
 		    items.push(story);
+<<<<<<< HEAD
 		    
 //			$(story.popcornTarget + ' #videoOverlay').hover(function() {
 //				// pop.play();
@@ -110,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function(){
 						story.playPause();
 					});
 		    
+=======
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 
 		  });
 		    
@@ -243,8 +252,44 @@ function nextStory()
 	
 	//alert(showingStory);
 	
+});
+
+$(window).resize(function() {
+	  $('.single .story').css("height", $(window).height());
+	});
+
+
+function layoutChange() {
+	
+	if(view == "single") {
+		view = "grid";
+	}
+	else {		
+		view = "single";
+	}
+	
+	
+	switch(view)
+	{
+		case "single":
+			showSingle();
+			break;
+			
+		case "grid":
+			showGrid();
+			break;
+			
+		default:
+			showSingle();
+	}
+	
+
+	
+	//console.log( "#stories single = " + $('#stories').hasClass( 'single' ) + " grid = " + $('#stories').hasClass( 'grid' ) );
+	
 }
 
+<<<<<<< HEAD
 function prevStory()
 {
 	if(showingStory > 0) {		
@@ -292,3 +337,40 @@ function NormalImgOf(filename)
    var re = new RegExp("(.+)_hover\\.(gif|png|jpg)", "g");
    return filename.replace(re, "$1.$2");
 }
+=======
+
+function showSingle()
+{
+	$('#stories').removeClass( 'grid isotope' ).addClass( 'single' );
+	$('#navbar').removeClass( 'grid isotope' ).addClass( 'single' );
+    $('.single .story').css("height", $(window).height());
+    $('.single .story').css("width", $(window).width());
+    $('.single#stories').css("height", $(window).height());
+    $('.single#stories').css("width", numberOfStories*$(window).width());
+
+
+
+}
+
+function showGrid()
+{
+	$('#stories').removeClass( 'single' ).addClass( 'grid isotope' );
+	$('#navbar').removeClass( 'single' ).addClass( 'grid isotope' );
+    $('.grid .story').css("height", gridRowHeight);
+    $('.grid .story').css("width", gridColumnWidth);
+    $('.grid#stories').css("height", "100%");
+    $('.grid#stories').css("width", "100%");
+
+	
+}
+
+function nextStory()
+{
+	
+}
+
+function prevStory()
+{
+	
+}
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8

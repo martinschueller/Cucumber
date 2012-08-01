@@ -16,14 +16,22 @@ Story = function() {
 	var videoColumns = 4;
 	var videoRatio;
 	var playing = false;
+<<<<<<< HEAD
 
 	var init = function(target, val, id) {
 		targetTag = target;
+=======
+	
+	
+	var init = function (target, val, id){
+		targetTag= target;
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 		storyID = id;
 		popcornTarget = "#videoWrapper" + storyID;
 		console.log("this is the target inside the init class: "+ popcornTarget);
 		storyData = val;
 		
+<<<<<<< HEAD
 		$(targetTag)
 				.append(
 						'<div class="story" id="'
@@ -45,6 +53,50 @@ Story = function() {
 			document.getElementById(storyID).style.borderTopColor = '#ED1E79';
 		} else if (storyData.hate == 1) {
 			document.getElementById(storyID).style.borderTopColor = '#ffff00';
+=======
+		$(targetTag).append('<div class="story" id="' + storyID +'"><div class="videoWrapper" id="videoWrapper' + storyID +'"><div id="videoOverlay" ></div></section><section id="soundWrapper"></div><section class="storytitle" id="title' + storyID +'"></section></div>');		
+		popcornWrapper = ".story#" + storyID;
+		popcornTarget = "#videoWrapper" + storyID;
+		pop = Popcorn.smart(popcornTarget, storyData.data.video_link);
+		 popcorn();
+		 setHeight();
+		 
+		$(popcornTarget + ' #videoOverlay').hover(function() {
+				//pop.play();
+				$(popcornTarget + ' #videoOverlay').css( "opacity", "0.0" );
+
+			},function() {
+				//pop.pause();
+				if(!playing){
+					$(popcornTarget + ' #videoOverlay').css( "opacity", "0.7" );
+				}
+				
+
+			} );
+		$(popcornTarget + ' #videoOverlay').click(function() {
+			if(!playing){
+			pop.play();
+			playing = true;
+			}
+			else
+				{
+				pop.pause();
+				playing = false;
+				
+				}
+			
+			//$(popcornTarget + ' #videoOverlay').css( "opacity", "0.0" );
+
+		});
+		
+		
+		
+		if( storyData.data.hate == 0 ) {
+			document.getElementById( storyID ).style.borderTopColor = '#ED1E79';
+		}
+		else if( storyData.data.hate == 1 ) {
+			document.getElementById( storyID ).style.borderTopColor = '#ffff00';
+>>>>>>> 54850d48e11e188374fbc40c0ca3aae583d1fae8
 		}
 	}
 
