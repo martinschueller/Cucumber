@@ -93,6 +93,13 @@ function feelChange() {
 
 function saveForm() {
 	
+	ifeel = document.getElementById( 'formFeel' ).value;
+	stuff = document.getElementById( 'formStuff' ).value;
+	place = document.getElementById( 'formPlace' ).value;
+	reason = document.getElementById( 'formReason' ).value;
+	vid = document.getElementById( 'formVid' ).value;	
+		
+
 	var feel = 0;
 	
 	if( ifeel == "hate" ) {
@@ -107,10 +114,10 @@ function saveForm() {
 	}
 	else if( vid.match( /vimeo/ ) ) {
 		console.log( "boo! vid format fail!" );
-		vid = vid.replace( /^(https|http):\/\/vimeo.com/g, 'http://player.vimeo.com/video' );
-				
+		vid = vid.replace( /^(https|http):\/\/vimeo.com/g, 'http://player.vimeo.com/video' );				
 	}	
 	else {
+		console.log( "vid == " + vid );
 		console.log( "error...no video!" );
 		return false;
 	}
